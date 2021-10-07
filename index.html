@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/master.css">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&family=Poppins&display=swap" rel="stylesheet">
+    <title>Gogo's Music Collection</title>
+  </head>
+  <body>
+    <header>
+      <table class="nav">
+        <tr>
+          <th>A</th>
+          <th>B</th>
+          <th>C</th>
+          <th>D</th>
+          <th>E</th>
+          <th>F</th>
+          <th>G</th>
+          <th>H</th>
+          <th>I</th>
+          <th>J</th>
+          <th>K</th>
+          <th>L</th>
+          <th>M</th>
+          <th>N</th>
+          <th>O</th>
+          <th>P</th>
+          <th>Q</th>
+          <th>R</th>
+          <th>S</th>
+          <th>T</th>
+          <th>U</th>
+          <th>V</th>
+          <th>W</th>
+          <th>X</th>
+          <th>Y</th>
+          <th>Z</th>
+          <th>Recent</th>
+        </tr>
+      </table>
+    </header>
+
+    <h1>Gogo's Music Collection</h1>
+    <h2>Home</h2>
+    <hr>
+
+    <div id="beethoven">
+      <button type="button" name="button" class="collapsible">
+        Composer
+      </button>
+      <button type="button" name="button" class="inner-collapsible">
+        <div style="padding: 18px">
+          Piece 1
+        </div>
+      </button>
+      <div class="content">
+        <div style="padding: 18px">
+          Content
+        </div>
+      </div>
+      <button type="button" name="button" class="inner-collapsible">
+        <div style="padding: 18px">
+          Piece 2
+        </div>
+      </button>
+      <div class="content">
+        <div style="padding: 18px">
+          Content
+        </div>
+      </div>
+    </div>
+    <br>
+
+    <div id="mozart">
+      <button type="button" name="button" class="collapsible">
+        Composer
+      </button>
+      <button type="button" name="button" class="inner-collapsible">
+        <div style="padding: 18px">
+          Piece 1
+        </div>
+      </button>
+      <div class="content">
+        <div style="padding: 18px">
+          Content
+        </div>
+      </div>
+      <button type="button" name="button" class="inner-collapsible">
+        <div style="padding: 18px">
+          Piece 2
+        </div>
+      </button>
+      <div class="content">
+        <div style="padding: 18px">
+          Content
+        </div>
+      </div>
+    </div>
+    <br>
+
+    <script type="text/javascript">
+      var coll = document.getElementsByClassName("collapsible");
+      var innercoll = document.getElementsByClassName("inner-collapsible");
+
+      for (i = 0; i < coll.length; i++) {
+        coll[i].addEventListener("click", function() {
+          this.classList.toggle("active");
+          var inneropen = this.parentNode.getElementsByClassName("inner-collapsible");
+          var contopen = this.parentNode.getElementsByClassName("content");
+          for (i = 0; i < inneropen.length; i++) {
+            var content = inneropen[i];
+            if (content.style.maxHeight) {
+              for (i = 0; i < inneropen.length; i++) {
+                inneropen[i].style.maxHeight = null;
+                inneropen[i].classList.remove("inner-active");
+              }
+              for (i = 0; i < contopen.length; i++) {
+                contopen[i].style.maxHeight = null;
+              }
+            } else {
+              content.style.maxHeight = content.scrollHeight + "px";
+            }
+          }
+        });
+      }
+
+      for (i = 0; i < innercoll.length; i++) {
+        innercoll[i].addEventListener("click", function() {
+          this.classList.toggle("inner-active");
+          var content = this.nextElementSibling;
+          if (content.style.maxHeight) {
+            content.style.maxHeight = null;
+          } else {
+            content.style.maxHeight = content.scrollHeight + "px";
+          }
+        });
+      }
+
+    </script>
+  </body>
+</html>
