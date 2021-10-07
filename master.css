@@ -38,7 +38,8 @@ h2 {
   font-family: 'Oswald', sans-serif;
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.2s ease-in-out;
+  display: block;
+  transition: max-height 0.2s ease-out;
 }
 
 .inner-active, .inner-collapsible:hover {
@@ -59,8 +60,18 @@ h2 {
 
 .nav {
   width: 100%;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins';
   border: 10px;
   text-align: center;
   table-layout: fixed;
+}
+
+.info {
+  display: inline-block;
+  height: 295px;
+  vertical-align: top;
+  padding: 10px;
+  font-size: 20px;
+  font-family: 'Poppins';
+  color: hsl(0, 0%, 50%);
 }
